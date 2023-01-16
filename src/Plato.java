@@ -96,74 +96,46 @@ public class Plato  extends JFrame {
                 if (button == A0) {
                     if ((button.getText().equals(B0.getText()) && button.getText().equals(C0.getText())) || (button.getText().equals(A1.getText()) && button.getText().equals(A2.getText())) || (button.getText().equals(B1.getText()) && button.getText().equals(C2.getText()))) {
                         win = true;
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
                     }
                 } else if (button == B0) {
                     if ((button.getText().equals(A0.getText()) && button.getText().equals(C0.getText())) || (button.getText().equals(B1.getText()) && button.getText().equals(B2.getText()))) {
                         win = true;
 
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
-
                     }
                 } else if (button == C0) {
                     if ((button.getText().equals(A0.getText()) && button.getText().equals(B0.getText())) || (button.getText().equals(C1.getText()) && button.getText().equals(C2.getText()))) {
                         win = true;
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
                     }
                 } else if (button == A1) {
                     if ((button.getText().equals(B1.getText()) && button.getText().equals(C1.getText())) || (button.getText().equals(A0.getText()) && button.getText().equals(A2.getText()))) {
                         win = true;
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
                     }
                 } else if (button == B1) {
                     if ((button.getText().equals(B0.getText()) && button.getText().equals(B2.getText())) || (button.getText().equals(A1.getText()) && button.getText().equals(C1.getText())) || (button.getText().equals(A0.getText()) && button.getText().equals(C2.getText())) || (button.getText().equals(C0.getText()) && button.getText().equals(A2.getText()))) {
                         win = true;
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
                     }
                 } else if (button == C1) {
                     if ((button.getText().equals(C0.getText()) && button.getText().equals(C2.getText())) || (button.getText().equals(A1.getText()) && button.getText().equals(B1.getText()))) {
                         win = true;
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
                     }
                 } else if (button == A2) {
                     if ((button.getText().equals(A0.getText()) && button.getText().equals(A1.getText())) || (button.getText().equals(B2.getText()) && button.getText().equals(C2.getText())) || (button.getText().equals(B1.getText()) && button.getText().equals(C0.getText()))) {
                         win = true;
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
                     }
                 } else if (button == B2) {
                     if ((button.getText().equals(B0.getText()) && button.getText().equals(B1.getText())) || (button.getText().equals(A2.getText()) && button.getText().equals(C2.getText()))) {
                         win = true;
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
                     }
                 } else if (button == C2) {
                     if ((button.getText().equals(C0.getText()) && button.getText().equals(C1.getText())) || (button.getText().equals(A2.getText()) && button.getText().equals(B2.getText())) || (button.getText().equals(B1.getText()) && button.getText().equals(A0.getText()))) {
                         win = true;
-                    } else {
-                        button.removeActionListener(this);
-                        movesCounter++;
                     }
                 }
-
-
             }
-            infoPanel.repaint();
             player1 = !player1;
+            infoPanel.repaint();
+            movesCounter++;
+            button.removeActionListener(this);
         }
     }
 
@@ -188,7 +160,7 @@ public class Plato  extends JFrame {
                 g2d.drawString("Game over :(", 70, 25);
             }
             else if (win) {
-                if (player1) {
+                if (!player1) {
                     g2d.drawString("Player 1 wins!", 70, 25);
                 } else {
                     g2d.drawString("Player 2 wins!", 70, 25);
