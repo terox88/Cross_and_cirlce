@@ -87,11 +87,11 @@ public class Plato  extends JFrame {
             if (!win) {
                 if (player1) {
                     button.setText("X");
-                    player1 = false;
+
 
                 } else {
                     button.setText("O");
-                    player1 = true;
+
                 }
                 if (button == A0) {
                     if ((button.getText().equals(B0.getText()) && button.getText().equals(C0.getText())) || (button.getText().equals(A1.getText()) && button.getText().equals(A2.getText())) || (button.getText().equals(B1.getText()) && button.getText().equals(C2.getText()))) {
@@ -163,6 +163,7 @@ public class Plato  extends JFrame {
 
             }
             infoPanel.repaint();
+            player1 = !player1;
         }
     }
 
@@ -187,7 +188,7 @@ public class Plato  extends JFrame {
                 g2d.drawString("Game over :(", 70, 25);
             }
             else if (win) {
-                if (!player1) {
+                if (player1) {
                     g2d.drawString("Player 1 wins!", 70, 25);
                 } else {
                     g2d.drawString("Player 2 wins!", 70, 25);
