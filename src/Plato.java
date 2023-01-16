@@ -1,14 +1,7 @@
-import javax.imageio.ImageIO;
 import javax.swing. *;
 import java.awt. *;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-
-
-
-
-import static javax.imageio.ImageIO.read;
-
 
 public class Plato  extends JFrame {
     private int movesCounter;
@@ -131,10 +124,11 @@ public class Plato  extends JFrame {
                         win = true;
                     }
                 }
+                player1 = !player1;
+                movesCounter++;
             }
-            player1 = !player1;
             infoPanel.repaint();
-            movesCounter++;
+
             button.removeActionListener(this);
         }
     }
