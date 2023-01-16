@@ -20,7 +20,7 @@ public class Plato  extends JFrame {
     public Plato() {
         super("Cross and circle");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setSize(350, 300);
+        setSize(300, 300);
         setLocation(50, 50);
         JPanel buttonPanel = new ButtonPanel();
         infoPanel = new InfoPanel();
@@ -110,7 +110,7 @@ public class Plato  extends JFrame {
 
                     }
                 } else if (button == C0) {
-                    if ((button.getText().equals(A0.getText()) && button.getText().equals(B0.getText())) || (button.getText().equals(C1.getText()) && button.getText().equals(C2.getText())) || (button.getText().equals(B1.getText()) && button.getText().equals(A0.getText()))) {
+                    if ((button.getText().equals(A0.getText()) && button.getText().equals(B0.getText())) || (button.getText().equals(C1.getText()) && button.getText().equals(C2.getText()))) {
                         win = true;
                     } else {
                         button.removeActionListener(this);
@@ -184,20 +184,20 @@ public class Plato  extends JFrame {
 
 
             if (movesCounter == 9) {
-                g2d.drawString("Game over :(", 90, 25);
+                g2d.drawString("Game over :(", 70, 25);
             }
             else if (win) {
                 if (!player1) {
-                    g2d.drawString("Player 1 wins!", 90, 25);
+                    g2d.drawString("Player 1 wins!", 70, 25);
                 } else {
-                    g2d.drawString("Player 2 wins!", 90, 25);
+                    g2d.drawString("Player 2 wins!", 70, 25);
                 }
             }
             else if (player1) {
 
-                g2d.drawString("Player's 1 turn", 90, 25);
+                g2d.drawString("Player's 1 turn", 70, 25);
             } else if (!player1) {
-                g2d.drawString("Player's 2 turn", 90, 25);
+                g2d.drawString("Player's 2 turn", 70, 25);
             }
 
 
